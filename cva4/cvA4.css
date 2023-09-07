@@ -26,9 +26,11 @@ body { margin: 0 }.sheet-outer {
 
 @page {
     size: A4;
-    margin: 0
+    margin: 0s
 }@media print {
     .sheet-outer.A4, .sheet-outer.A5.landscape { 
         width: 210mm 
     }
 }
+
+@media print { * { overflow: visible !important; }}

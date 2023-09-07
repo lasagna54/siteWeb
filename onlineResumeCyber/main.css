@@ -2,7 +2,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-img {max-width:100%;} /*Empeche la photo d'etre plus grande que son container*/
+img {
+    max-width: 100%;
+}
+
+/*Empeche la photo d'etre plus grande que son container*/
 
 .header {
     padding: 5px;
@@ -66,7 +70,7 @@ img {max-width:100%;} /*Empeche la photo d'etre plus grande que son container*/
 /* Column container */
 .row {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -74,7 +78,7 @@ img {max-width:100%;} /*Empeche la photo d'etre plus grande que son container*/
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
 .side {
-    flex: 30%;
+    flex: 0 0 30%;
     /* Set the width of the sidebar */
     background-color: #f1f1f1;
     /* Grey background color */
@@ -82,13 +86,28 @@ img {max-width:100%;} /*Empeche la photo d'etre plus grande que son container*/
     /* Some padding */
 }
 
-.headerSide{
+.headerSide {
     display: flex;
+    flex: 1;
+}
+
+.partieDroite {
+    display: flex;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.skills>div {
+    margin-left: 15px;
 }
 
 /* Main column */
 .main {
-    flex: 55%;
+    flex: 80;
     /* Set the width of the main content */
     background-color: white;
     /* White background color */
@@ -105,7 +124,8 @@ img {max-width:100%;} /*Empeche la photo d'etre plus grande que son container*/
     padding: 20px;
     /* Some padding */
     margin-bottom: 20px;
-    border-radius: 25px;;
+    border-radius: 25px;
+    ;
 }
 
 /* a propos de moi*/
@@ -116,7 +136,8 @@ img {max-width:100%;} /*Empeche la photo d'etre plus grande que son container*/
     padding: 20px;
     /* Some padding */
     margin-bottom: 20px;
-    border-radius: 25px;;
+    border-radius: 25px;
+    ;
 }
 
 /* experience */
@@ -127,11 +148,12 @@ img {max-width:100%;} /*Empeche la photo d'etre plus grande que son container*/
     font-size: 18px;
     padding: 20px;
     /* Some padding */
-    border-radius: 25px;;
+    border-radius: 25px;
+    ;
     margin-bottom: 20px;
 }
 
-.poste{
+.poste {
     font-size: 22px;
     font-weight: bold;
 }
@@ -144,17 +166,19 @@ img {max-width:100%;} /*Empeche la photo d'etre plus grande que son container*/
     /* White background color */
     padding: 20px;
     /* Some padding */
-    border-radius: 25px;;
+    border-radius: 25px;
+    ;
+    margin-bottom: 20px;
 }
 
-.diplome{
+.diplome {
     font-size: 22px;
     font-weight: bold;
 }
 
 /*colonne de gauche*/
 .technos {
-    flex: 15%;
+    flex: 20%;
     /* Set the width of the main content */
     background-color: blanchedalmond;
     /* White background color */
@@ -162,15 +186,17 @@ img {max-width:100%;} /*Empeche la photo d'etre plus grande que son container*/
     /* Some padding */
 }
 
-hr.parcUniv{
+hr.parcUniv {
     margin-inline-start: 0;
     width: 500px;
 }
-hr.expProf{
+
+hr.expProf {
     margin-inline-start: 0;
     width: 500px;
 }
-hr.skill{
+
+hr.skill {
     margin-inline-start: 0;
     width: 50px;
 }
@@ -184,9 +210,18 @@ hr.skill{
 
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1290px) {
     .row {
         flex-direction: column;
+
+        .headerSide {
+            flex-direction: row;
+        }
+
+        .skills {
+            flex-direction: row;
+
+        }
     }
 }
 
@@ -197,13 +232,13 @@ hr.skill{
     }
 }
 
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-    .navbar a {
-        float: none;
-        width: 100%;
+/*Mets la partie a coté de la photot sous la photo en dessous de 550px */
+@media screen and (max-width: 850px) {
+    .row {
+        margin: 0;
     }
 }
+
 
 .footer {
     padding: 5px;
@@ -213,13 +248,13 @@ hr.skill{
     background: #ddd;
     /* Grey background */
     position: fixed;
-    height:25px;
+    height: 25px;
     bottom: 0;
-    width:calc(100% - 15px);
+    width: calc(100% - 15px);
 }
 
 /* pour les etoiles et autre icones */
 
 .checked {
     color: orange;
-  }
+}
