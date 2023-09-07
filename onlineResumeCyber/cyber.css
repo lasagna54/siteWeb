@@ -38,6 +38,8 @@
         inset 0 0 .5em 0 var(--clr-neon);
 
     position: relative;
+
+    animation: buttonFlicker 3.5s infinite alternate;
 }
 
 .neon-button::before {
@@ -46,24 +48,25 @@
     position: absolute;
     background: var(--clr-neon);
     top: 120%;
-    left:0;
+    left: 0;
     width: 100%;
     height: 100%;
 
-    transform: perspective(1em) rotatex(40deg)
-    scale(1,0.35);
+    transform: perspective(1em) rotatex(40deg) scale(1, 0.35);
     filter: blur(1.5em);
     opacity: 0.7;
+
+    animation: reflectionFlicker 3.5s infinite alternate
 }
 
-.neon-button::after{
+.neon-button::after {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    box-shadow:  0 0 2em 0.5em var(--clr-neon);
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
     opacity: 0;
     background-color: var(var(--clr-neon));
     transition: opacity 100ms linear;
@@ -85,3 +88,46 @@
 .neon-button:focus::before {
     opacity: 1;
 }
+
+@keyframes buttonFlicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        text-shadow:
+            0 0 0.125em hsl(0 0% 100% / .3),
+            0 0 0.45em currentColor;
+
+        box-shadow: 0 0 .5em 0 var(--clr-neon),
+            inset 0 0 .5em 0 var(--clr-neon);
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+        box-shadow: none;
+    }
+
+}
+    @keyframes reflectionFlicker {
+
+        0%,
+        18%,
+        22%,
+        25%,
+        53%,
+        57%,
+        100% {
+            opacity:0.7;
+        }
+        20%,
+        24%,
+        55% {
+            opacity: 0.2;
+        }
+    }
