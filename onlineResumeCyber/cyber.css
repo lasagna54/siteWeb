@@ -66,7 +66,7 @@
     box-shadow:  0 0 2em 0.5em var(--clr-neon);
     opacity: 0;
     background-color: var(var(--clr-neon));
-    transition: opacity 10000ms linear;
+    transition: opacity 100ms linear;
 }
 
 .neon-button:hover,
