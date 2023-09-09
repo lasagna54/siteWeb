@@ -4,6 +4,8 @@
         <title>Gabriel Masschelein</title>
         <link rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="cyber.css">
+        <link rel="stylesheet" type="text/css" href="cyberStruc.css">
+        <link rel="stylesheet" type="text/css" href="neon-button.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/41e4a645a9.js"
@@ -13,6 +15,7 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap"
             rel="stylesheet">
+            <script src="scripts.js"></script>
     </head>
     <body>
         <div class="header">
@@ -26,190 +29,199 @@
         </div>
 
         <div class="row"> <!-- contient les 3 colonnes-->
-            <div class="side"> <!-- photos, info, competences-->
-                <div>
-                    <div class="headerSide"> <!-- photos, infos-->
-                        <div>
-                            <img src="../images/photo.JPG" alt="Photo"
-                                style="height:220px; margin-right: 20px;margin-bottom:20px;
+            <div class="side screen sc1"> <!-- photos, info, competences-->
+                <div class="screen-overlay"></div>
+                <div class="screen-content">
+                    <div>
+                        <div class="headerSide"> <!-- photos, infos-->
+                            <div class="photo">
+                                <img src="../images/photo.JPG" alt="Photo"
+                                    style="height:220px; margin-right: 20px;margin-bottom:20px;
                                 min-width: 220px;">
+                            </div>
+                            <div class="aPropos"
+                                style="resize: none;min-width: 240px;">
+                                <!-- permis age tout ca... -->
+                                <span style="font-size: large;"> <b>Gabriel
+                                        Masschelein</b> </span> <br> <br>
+                                <i class="fa-solid fa-user"></i> <span id="age">
+                                </span> ans <br> <br>
+                                <span class="fa fa-car"></span> Permis B <br>
+                                <br>
+                                <span class="fa fa-home"></span> POMPEY (54340)
+                                France
+                                <br> <br>
+                                <br> <br>
+                            </div>
                         </div>
-                        <div class="aPropos"
-                            style="resize: none;min-width: 240px;">
-                            <!-- permis age tout ca... -->
-                            <span style="font-size: large;"> <b>Gabriel
-                                    Masschelein</b> </span> <br> <br>
-                            <i class="fa-solid fa-user"></i> <span id="age">
-                            </span> ans <br> <br>
-                            <span class="fa fa-car"></span> Permis B <br> <br>
-                            <span class="fa fa-home"></span> POMPEY (54340)
-                            France
-                            <br> <br>
-                            <br> <br>
-                        </div>
+                        <span class="fa fa-envelope"></span> <span>
+                            gabriel.masschelein
+                            "at" hotmail.com </span>
                     </div>
-                    <span class="fa fa-envelope"></span> <span>
-                        gabriel.masschelein
-                        "at" hotmail.com </span>
-                </div>
 
-                <div class="skills"> <!--competences... -->
-                    <p>
-                        <div>
-                        <hr>
-                        <h2 style="margin-top: 5px;">Compétences:</h2>
-                            <h3 style="margin-top: 0px;">Soft-Skills:</h3>
+                    <div class="skills"> <!--competences... -->
+                        <p>
+                            <div>
+                                <hr>
+                                <h2 style="margin-top: 5px;">Compétences:</h2>
+                                <h3 style="margin-top: 0px;">Soft-Skills:</h3>
 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            &emsp; Curiosité <br>
-                            <hr class="skill">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-half-full checked"></span>
-                            &emsp; Résolution de problèmes <br>
-                            <hr class="skill">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-half-full checked"></span>
-                            &emsp; Esprit d'équipe <br>
-                            <hr class="skill">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-half-full checked"></span>
-                            &emsp; Démarche projet <br>
-                            <hr class="skill">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            &emsp; Capacité d'apprentissage <br>
-                            <hr class="skill">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            &emsp; Intégration <br>
-                            <hr class="skill">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            &emsp; Adaptation <br>
-                            <hr class="skill">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            &emsp; Autonomie <br>
-                            <hr class="skill">
-                        </div>
-                        <div>
-                            <h3>Outils:</h3>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-half-full checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            &emsp; Visual Studio Code
-                            <br>
-                            <hr class="skill">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                &emsp; Curiosité <br>
+                                <hr class="skill">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                &emsp; Résolution de problèmes <br>
+                                <hr class="skill">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                &emsp; Esprit d'équipe <br>
+                                <hr class="skill">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                &emsp; Démarche projet <br>
+                                <hr class="skill">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                &emsp; Capacité d'apprentissage <br>
+                                <hr class="skill">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                &emsp; Intégration <br>
+                                <hr class="skill">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                &emsp; Adaptation <br>
+                                <hr class="skill">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                &emsp; Autonomie <br>
+                                <hr class="skill">
+                            </div>
+                            <div>
+                                <h3>Outils:</h3>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                &emsp; Visual Studio Code
+                                <br>
+                                <hr class="skill">
 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            &emsp; Github
-                            <hr class="skill">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                &emsp; Github
+                                <hr class="skill">
 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-half-full checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            &emsp; Docker
-                            <hr class="skill">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                &emsp; Docker
+                                <hr class="skill">
 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-half-full checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            &emsp; Eclipse
-                            <hr class="skill">
-                        </div>
-                        <div>
-                            <h3>Langues:</h3>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-half-full checked"></span>
-                            &emsp; Anglais C1 (Toeic 940)
-                            <br>
-                            <hr class="skill">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            &emsp; Allemand A2
-                        </div>
-                        <div>
-                            <h3>Système d'exploitation:</h3>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            &emsp; Linux
-                            <br>
-                            <hr class="skill">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star-half-full checked"></span>
-                            <span class="fa fa-star-o checked"></span>
-                            &emsp; Windows
-                        </div>
-                        <div>
-                            <hr>
-                            <h2 style="margin-top: 5px;">Loisirs:</h2>
-                            <i class="fa-solid fa-computer fa-lg"></i> &emsp;
-                            Informatique, projets divers...
-                            <br>
-                            <hr class="skill">
-                            <span class="fa-solid fa-guitar fa-lg"></span>
-                            &emsp;
-                            Apprentissage de la basse électrique en autodidacte
-                            <br>
-                            <hr class="skill">
-                            <i class="fa-solid fa-utensils fa-lg"></i> &emsp;
-                            Cuisine
-                        </div>
-                    </p>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                &emsp; Eclipse
+                                <hr class="skill">
+                            </div>
+                            <div>
+                                <h3>Langues:</h3>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                &emsp; Anglais C1 (Toeic 940)
+                                <br>
+                                <hr class="skill">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                &emsp; Allemand A2
+                            </div>
+                            <div>
+                                <h3>Systèmes d'exploitation:</h3>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                &emsp; Linux
+                                <br>
+                                <hr class="skill">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star-half-full checked"></span>
+                                <span class="fa fa-star-o checked"></span>
+                                &emsp; Windows
+                            </div>
+                            <div>
+                                <hr>
+                                <h2 style="margin-top: 5px;">Loisirs:</h2>
+                                <i class="fa-solid fa-computer fa-lg"></i>
+                                &emsp;
+                                Informatique, projets divers...
+                                <br>
+                                <hr class="skill">
+                                <span class="fa-solid fa-guitar fa-lg"></span>
+                                &emsp;
+                                Apprentissage de la basse électrique en
+                                autodidacte
+                                <br>
+                                <hr class="skill">
+                                <i class="fa-solid fa-utensils fa-lg"></i>
+                                &emsp;
+                                Cuisine
+                            </div>
+                        </p>
+                    </div>
                 </div>
             </div>
 
             <div class="partieDroite">
                 <div class="main">
                     <!-- A propos, experience, parcours universitaire-->
-                    <div class="summary">
-                        <h2><u>A propos de moi</u></h2>
+                    <div class="summary screen sc2">
+                        <div class="screen-overlay"></div>
+                        <div class="screen-content">
+                        <h2><u>À propos de moi</u></h2>
                         <p style="text-align: justify"> Récemment diplômé de
                             l'École
                             polytechnique de l'université
@@ -217,19 +229,22 @@
                             de
                             l'information,
                             je souhaite faire carrière dans le développement
-                            informatique. Passioné par les différentes
+                            informatique. passionné par les différentes
                             technologies
                             je m'intéresse
                             aux différents langages de programmation et j'aime
                             relever
                             les défis inhérents à chaque projet.
                         </p>
+                        </div>
                     </div>
-                    <div class="experience">
-                        <h2><u>Expériences profesionnelles</u></h2>
+                    <div class="experience screen sc3">
+                        <div class="screen-overlay"></div>
+                        <div class="screen-content">
+                        <h2><u>Expériences professionnelles</u></h2>
                         <p>
-                            <span class="poste">Apprenti Analyste
-                                Fonctionnel</span>
+                            <span class="poste">Apprenti analyste
+                                fonctionnel</span>
                             <br>
                             &ensp; 2020 - 2023 &ensp; Sogetrel, Nancy &ensp;
                             France
@@ -246,7 +261,7 @@
                                 <li>Utiliser une démarche projet </li>
                                 <li>Récupérer et définir des besoins </li>
                             </ul>
-                            <hr class="expProf">
+                            <hr class="expProf ">
                             <span class="poste">Apprenti développeur VBA
                             </span>
                             <br>
@@ -276,11 +291,14 @@
                             </ul>
                             <hr class="expProf">
                         </p>
+                        </div>
                     </div>
-                    <div class="parcoursUniv">
+                    <div class="parcoursUniv screen sc4">
+                        <div class="screen-overlay"></div>
+                        <div class="screen-content">
                         <p>
-                            <h2><u>Parcours Universitaire</u></h2>
-                            <span class="diplome">Titre d'ingénieur
+                            <h2><u>Parcours universitaire</u></h2>
+                            <span class="diplome">Diplôme d'ingénieur
                                 spécialité
                                 Systèmes et Technologies de l'information</span>
                             <br>
@@ -308,17 +326,19 @@
                             <span class="diplome">Bac S option SVT</span>
                             <br>
                             &ensp; 2012 - 2015 &ensp; Lycée Jean Talon,
-                            Châlons en
-                            Champagne &ensp; France
+                            Châlons-en-Champagne &ensp; France
                             <hr class="parcUniv">
 
                         </p>
+                        </div>  
                     </div>
                     <div class="hiddenButtonHolder">
-                        <a href="#" class="neon-button">Click me</a>
+                        <a href="index.html" class="neon-button">Click me</a>
                     </div>
                 </div>
-                <div class="technos">
+                <div class="technos screen sc5">
+                    <div class="screen-overlay"></div>
+                        <div class="screen-content">
                     <p>
                         <h3> <u>Langages utilisés</u></h3>
                         <h4>Java</h4>
@@ -355,6 +375,7 @@
                         <h4>VBA</h4>
                         <hr class="techno">
                     </p>
+                    </div>  
                 </div>
             </div>
 
@@ -362,9 +383,9 @@
                 <span>Gabriel Masschelein - Mise à jour septembre 2023</span>
             </div>
         </div>
-        </body>
+    </body>
 
-        <script>
+    <script>
         const today = new Date()
         const aniv = new Date('1996-09-05T00:00:00.000Z');
         var age = today.getFullYear() - aniv.getFullYear();
@@ -380,4 +401,4 @@
         
     </script>
 
-    </html>
+</html>

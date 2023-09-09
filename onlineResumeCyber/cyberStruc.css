@@ -1,0 +1,147 @@
+
+img {
+    max-width: 100%;
+}
+
+/*Empeche la photo d'etre plus grande que son container*/
+
+/* Style the top navigation bar */
+.navbar {
+    overflow: hidden;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    float: left;
+    /* Make sure that the links stay side-by-side */
+    display: block;
+    text-decoration: none;
+    /* Remove underline */
+}
+
+/* Right-aligned link */
+.navbar a.right {
+    float: right;
+    /* Float a link to the right */
+}
+
+
+/* Ensure proper sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Column container */
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    flex: 0 0 30%;
+    margin: 0px 15px;
+}
+
+.headerSide {
+    display: flex;
+    flex: 1;
+}
+
+.partieDroite {
+    display: flex;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.skills>div {
+    margin-left: 15px;
+}
+
+/* Main column */
+.main {
+    flex: 80;
+    /* Set the width of the main content */
+    /* White background color */
+    /* Some padding */
+}
+
+
+/* a propos de moi*/
+.summary {
+    /* Some padding */
+    margin-bottom: 20px;
+    ;
+}
+
+/* experience */
+.experience {
+    margin-bottom: 20px;
+}
+
+/* Parcorus universitaire */
+.parcoursUniv {
+    margin-bottom: 20px;
+}
+
+
+/*colonne de gauche*/
+.technos {
+    flex: 20%;
+    margin-left: 15px;
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1800px) {
+    .headerSide {
+        flex-direction: column;
+    }
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1290px) {
+    .row {
+        flex-direction: column;
+
+        .headerSide {
+            flex-direction: row;
+        }
+
+        .skills {
+            flex-direction: row;
+
+        }
+    }
+}
+
+/*Mets la partie a coté de la photot sous la photo en dessous de 550px */
+@media screen and (max-width: 550px) {
+    .headerSide {
+        flex-direction: column;
+    }
+}
+
+/*Mets la partie a coté de la photot sous la photo en dessous de 550px */
+@media screen and (max-width: 850px) {
+    .row {
+        margin: 0;
+    }
+}
+
+
+.footer {
+    position: fixed;
+    height: 25px;
+    bottom: 0;
+    width: calc(100% - 15px);
+    
+}

@@ -1,7 +1,22 @@
 :root {
-    --clr-neon: hsl(317 100% 54%);
+    --value-clr-neon: 317, 100%, 54%;
+    --clr-neon: hsl(317, 100%, 54%);
+    --clr-font-screen: hsl(317, 68%, 93%);
     --clr-bg: hsl(323 21% 16%);
+    --sec-turn-on-time: 2s
 }
+
+body {
+    background-color: hsl(323 21% 16%);
+
+}
+
+
+.photo>img {
+    filter: sepia(100%) saturate(500%) brightness(100%) hue-rotate(240deg);
+    border-radius: 25px;
+}
+
 
 *,
 *::before,
@@ -9,87 +24,183 @@
     box-sizing: border-box;
 }
 
-.hiddenButtonHolder {
-    display: flex;
-    justify-content: center;
-    background-color: var(--clr-bg);
+.screen {
+    position: relative;
+    border: 3px solid hsla(var(--value-clr-neon), 0.8);
     border-radius: 25px;
-    position: relative;
-}
-
-.neon-button {
-
-    font-size: 2rem;
-    display: inline-block;
-    margin: 1em 1em 2em;
-    font-family: "Balsamiq Sans", cursive;
-    cursor: pointer;
-    text-decoration: none;
-    color: var(--clr-neon);
-    border: var(--clr-neon) 4px solid;
-    padding: 0.25em 1em;
-    border-radius: 0.25em;
-
-    text-shadow:
-        0 0 0.125em hsl(0 0% 100% / .3),
-        0 0 0.45em currentColor;
-
-    box-shadow: 0 0 .5em 0 var(--clr-neon),
-        inset 0 0 .5em 0 var(--clr-neon);
-
-    position: relative;
-
-    animation: buttonFlicker 3.5s infinite alternate;
-}
-
-.neon-button::before {
-    pointer-events: none;
-    content: "";
-    position: absolute;
-    background: var(--clr-neon);
-    top: 120%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    transform: perspective(1em) rotatex(40deg) scale(1, 0.35);
-    filter: blur(1.5em);
-    opacity: 0.7;
-
-    animation: reflectionFlicker 3.5s infinite alternate
-}
-
-.neon-button::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    background-color: hsla(var(--value-clr-neon), 0.15);
+    overflow: hidden;
     opacity: 0;
-    background-color: var(var(--clr-neon));
-    transition: opacity 100ms linear;
+    transform: translate(0, 0);
+    transition: transform 5s ease; 
 }
 
-.neon-button:hover,
-.neon-button:focus {
-    background: var(--clr-neon);
-    color: var(--clr-bg);
-    text-shadow: none;
+.screen:hover {
+    animation: floating-screen 10s linear infinite;
 }
 
-.neon-button:hover::after,
-.neon-button:focus::after {
+@keyframes floating-screen {
+    0% {
+        transform: translate(0, -10px);
+      }
+      12.5% {
+        transform: translate(7px, -7px);
+      }
+      25% {
+        transform: translate(10px, 0);
+      }
+      37.5% {
+        transform: translate(7px, 7px);
+      }
+      50% {
+        transform: translate(0, 10px);
+      }
+      62.5% {
+        transform: translate(-7px, 7px);
+      }
+      75% {
+        transform: translate(-10px, 0);
+      }
+      87.5% {
+        transform: translate(-7px, -7px);
+      }
+      100% {
+        transform: translate(0, -10px);
+      }
+    }
+
+.sc1.closed {
+    animation: display-screen 0s forwards,
+        turn-on-animation var(--sec-turn-on-time) forwards;
+}
+
+.open {
     opacity: 1;
+    transition: opacity 2s linear;
 }
 
-.neon-button:hover::before,
-.neon-button:focus::before {
-    opacity: 1;
+.sc1>.screen-content {
+    animation: turn-on-flicker 2s forwards var(--sec-turn-on-time);
 }
 
-@keyframes buttonFlicker {
+.sc1>.screen-overlay {
+    animation: turn-on-flicker 2s forwards var(--sec-turn-on-time),
+        mouvement-ligne-ecran 1s infinite linear var(--sec-turn-on-time);
+}
+
+.sc2.closed {
+    animation: display-screen 0s forwards calc(var(--sec-turn-on-time)*1.5),
+        turn-on-animation var(--sec-turn-on-time) forwards calc(var(--sec-turn-on-time)*1.5);
+}
+
+.sc2>.screen-content {
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*2.5);
+}
+
+.sc2>.screen-overlay {
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*2.5),
+        mouvement-ligne-ecran 1s infinite linear calc(var(--sec-turn-on-time)*2.5);
+}
+
+.sc3.closed {
+    animation: display-screen 0s forwards calc(var(--sec-turn-on-time)*3),
+        turn-on-animation var(--sec-turn-on-time) forwards calc(var(--sec-turn-on-time)*3);
+}
+
+.sc3>.screen-content {
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*4);
+}
+
+.sc3>.screen-overlay {
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*4),
+        mouvement-ligne-ecran 1s infinite linear calc(var(--sec-turn-on-time)*4);
+}
+
+.sc4.closed {
+    animation: display-screen 0s forwards calc(var(--sec-turn-on-time)*4.5),
+        turn-on-animation var(--sec-turn-on-time) forwards calc(var(--sec-turn-on-time)*4.5);
+}
+
+.sc4>.screen-content {
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*5.5);
+}
+
+.sc4>.screen-overlay {
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*5.5),
+        mouvement-ligne-ecran 1s infinite linear calc(var(--sec-turn-on-time)*5.5);
+}
+
+.sc5.closed {
+    animation: display-screen 0s forwards calc(var(--sec-turn-on-time)*6),
+        turn-on-animation var(--sec-turn-on-time) forwards calc(var(--sec-turn-on-time)*6);
+}
+
+.sc5>.screen-content {
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*7);
+}
+
+.sc5>.screen-overlay {
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*7),
+        mouvement-ligne-ecran 1s infinite linear calc(var(--sec-turn-on-time)*7);
+}
+
+.screen-overlay {
+    position: absolute;
+    background: linear-gradient(hsla(var(--value-clr-neon), 0.15),
+            hsla(var(--value-clr-neon), 0.15) 3px,
+            transparent 3px,
+            transparent 9px);
+    background-size: 100% 9px;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+    opacity: 0;
+    /*Will be turned to 1 after the time needed for the screen to open */
+    animation: mouvement-ligne-ecran 1s infinite linear var(--sec-turn-on-time);
+}
+
+.screen-content {
+    margin: 15px;
+    padding: 5px;
+    border: 1px solid hsla(var(--value-clr-neon), 0.4);
+    border-radius: 10px;
+    opacity: 0;
+    /*Will be turned to 0.95 after the time needed for the screen to open */
+    color: var(--clr-font-screen);
+    text-shadow: 0 0 0.125em var(--clr-font-screen);
+    height: calc(100% - 30px);
+}
+
+@keyframes mouvement-ligne-ecran {
+    from {
+        background-position: 0px 0px;
+    }
+
+    to {
+        background-position: 0px -18px;
+    }
+}
+
+@keyframes display-screen {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes turn-on-animation {
+    from {
+        transform: scaleY(0)
+    }
+
+    to {
+        transform: scaleY(1)
+    }
+}
+
+@keyframes turn-on-flicker {
 
     0%,
     18%,
@@ -98,36 +209,78 @@
     53%,
     57%,
     100% {
-        text-shadow:
-            0 0 0.125em hsl(0 0% 100% / .3),
-            0 0 0.45em currentColor;
+        opacity: 0.95;
+    }
 
-        box-shadow: 0 0 .5em 0 var(--clr-neon),
-            inset 0 0 .5em 0 var(--clr-neon);
+    5%,
+    20%,
+    24%,
+    55% {
+        opacity: 0.2;
+    }
+}
+
+@keyframes reflectionFlicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        opacity: 0.7;
     }
 
     20%,
     24%,
     55% {
-        text-shadow: none;
-        box-shadow: none;
+        opacity: 0.2;
     }
-
 }
-    @keyframes reflectionFlicker {
 
-        0%,
-        18%,
-        22%,
-        25%,
-        53%,
-        57%,
-        100% {
-            opacity:0.7;
-        }
-        20%,
-        24%,
-        55% {
-            opacity: 0.2;
-        }
-    }
+hr {
+    color: var(--clr-neon);
+    background-color: var(--clr-neon);
+    height: 2px;
+}
+
+hr.parcUniv {
+    margin-inline-start: 0;
+    width: 500px;
+}
+
+hr.expProf {
+    margin-inline-start: 0;
+    width: 500px;
+}
+
+hr.skill {
+    margin-inline-start: 0;
+    width: 50px;
+}
+
+.screen:after,
+.screen:before {
+    content: "";
+    height: 5px;
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    translate: -50% 0%;
+    background-color: white;
+}
+
+.screen:before {
+    width: 15%;
+    top: 0rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.screen:after {
+    width: 25%;
+    bottom: 0rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
