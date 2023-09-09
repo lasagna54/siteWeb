@@ -3,7 +3,7 @@
     --clr-neon: hsl(317, 100%, 54%);
     --clr-font-screen: hsl(317, 68%, 93%);
     --clr-bg: hsl(323 21% 16%);
-    --sec-turn-on-time: 2s
+    --sec-turn-on-time: 1.2s
 }
 
 body {
@@ -32,7 +32,7 @@ body {
     overflow: hidden;
     opacity: 0;
     transform: translate(0, 0);
-    transition: transform 5s ease; 
+    transition: transform 5s ease;
 }
 
 .screen:hover {
@@ -42,44 +42,64 @@ body {
 @keyframes floating-screen {
     0% {
         transform: translate(0, -10px);
-      }
-      12.5% {
-        transform: translate(7px, -7px);
-      }
-      25% {
-        transform: translate(10px, 0);
-      }
-      37.5% {
-        transform: translate(7px, 7px);
-      }
-      50% {
-        transform: translate(0, 10px);
-      }
-      62.5% {
-        transform: translate(-7px, 7px);
-      }
-      75% {
-        transform: translate(-10px, 0);
-      }
-      87.5% {
-        transform: translate(-7px, -7px);
-      }
-      100% {
-        transform: translate(0, -10px);
-      }
     }
 
-.sc1.closed {
-    animation: display-screen 0s forwards,
-        turn-on-animation var(--sec-turn-on-time) forwards;
+    12.5% {
+        transform: translate(7px, -7px);
+    }
+
+    25% {
+        transform: translate(10px, 0);
+    }
+
+    37.5% {
+        transform: translate(7px, 7px);
+    }
+
+    50% {
+        transform: translate(0, 10px);
+    }
+
+    62.5% {
+        transform: translate(-7px, 7px);
+    }
+
+    75% {
+        transform: translate(-10px, 0);
+    }
+
+    87.5% {
+        transform: translate(-7px, -7px);
+    }
+
+    100% {
+        transform: translate(0, -10px);
+    }
 }
+
+
 
 .open {
     opacity: 1;
     transition: opacity 2s linear;
 }
 
-.sc1>.screen-content {
+.flickering{
+    animation: flicker-on-click 1s forwards !important;
+}
+
+.open>.screen-content{
+    opacity: 0.95;
+}
+
+/*Gestion des différents écrans avec différents délais d'allumage */
+
+.sc1.closed {
+    animation: display-screen 0s forwards,
+        turn-on-animation var(--sec-turn-on-time) forwards;
+}
+
+.sc1:not(.open)>.screen-content {
     animation: turn-on-flicker 2s forwards var(--sec-turn-on-time);
 }
 
@@ -89,59 +109,59 @@ body {
 }
 
 .sc2.closed {
-    animation: display-screen 0s forwards calc(var(--sec-turn-on-time)*1.5),
-        turn-on-animation var(--sec-turn-on-time) forwards calc(var(--sec-turn-on-time)*1.5);
+    animation: display-screen 0s forwards calc(var(--sec-turn-on-time)*.5),
+        turn-on-animation var(--sec-turn-on-time) forwards calc(var(--sec-turn-on-time)*.5);
 }
 
-.sc2>.screen-content {
-    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*2.5);
+.sc2:not(.open)>.screen-content {
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*1.5);
 }
 
 .sc2>.screen-overlay {
-    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*2.5),
-        mouvement-ligne-ecran 1s infinite linear calc(var(--sec-turn-on-time)*2.5);
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*1.5),
+        mouvement-ligne-ecran 1s infinite linear calc(var(--sec-turn-on-time)*1.5);
 }
 
 .sc3.closed {
-    animation: display-screen 0s forwards calc(var(--sec-turn-on-time)*3),
-        turn-on-animation var(--sec-turn-on-time) forwards calc(var(--sec-turn-on-time)*3);
+    animation: display-screen 0s forwards calc(var(--sec-turn-on-time)*2),
+        turn-on-animation var(--sec-turn-on-time) forwards calc(var(--sec-turn-on-time)*2);
 }
 
-.sc3>.screen-content {
-    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*4);
+.sc3:not(.open)>.screen-content {
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*3);
 }
 
 .sc3>.screen-overlay {
-    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*4),
-        mouvement-ligne-ecran 1s infinite linear calc(var(--sec-turn-on-time)*4);
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*3),
+        mouvement-ligne-ecran 1s infinite linear calc(var(--sec-turn-on-time)*3);
 }
 
 .sc4.closed {
-    animation: display-screen 0s forwards calc(var(--sec-turn-on-time)*4.5),
-        turn-on-animation var(--sec-turn-on-time) forwards calc(var(--sec-turn-on-time)*4.5);
+    animation: display-screen 0s forwards calc(var(--sec-turn-on-time)*3.5),
+        turn-on-animation var(--sec-turn-on-time) forwards calc(var(--sec-turn-on-time)*3.5);
 }
 
-.sc4>.screen-content {
-    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*5.5);
+.sc4:not(.open)>.screen-content {
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*4.5);
 }
 
 .sc4>.screen-overlay {
-    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*5.5),
-        mouvement-ligne-ecran 1s infinite linear calc(var(--sec-turn-on-time)*5.5);
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*4.5),
+        mouvement-ligne-ecran 1s infinite linear calc(var(--sec-turn-on-time)*4.5);
 }
 
 .sc5.closed {
-    animation: display-screen 0s forwards calc(var(--sec-turn-on-time)*6),
-        turn-on-animation var(--sec-turn-on-time) forwards calc(var(--sec-turn-on-time)*6);
+    animation: display-screen 0s forwards calc(var(--sec-turn-on-time)*5),
+        turn-on-animation var(--sec-turn-on-time) forwards calc(var(--sec-turn-on-time)*5);
 }
 
-.sc5>.screen-content {
-    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*7);
+.sc5:not(.open)>.screen-content {
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*6);
 }
 
 .sc5>.screen-overlay {
-    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*7),
-        mouvement-ligne-ecran 1s infinite linear calc(var(--sec-turn-on-time)*7);
+    animation: turn-on-flicker 2s forwards calc(var(--sec-turn-on-time)*6),
+        mouvement-ligne-ecran 1s infinite linear calc(var(--sec-turn-on-time)*6);
 }
 
 .screen-overlay {
@@ -172,6 +192,7 @@ body {
     color: var(--clr-font-screen);
     text-shadow: 0 0 0.125em var(--clr-font-screen);
     height: calc(100% - 30px);
+    animation: screen-on-click 1s forwards linear paused;
 }
 
 @keyframes mouvement-ligne-ecran {
@@ -236,6 +257,60 @@ body {
     24%,
     55% {
         opacity: 0.2;
+    }
+}
+
+@keyframes floating-screen {
+    0% {
+        transform: translate(0, -10px);
+    }
+
+    12.5% {
+        transform: translate(7px, -7px);
+    }
+
+    25% {
+        transform: translate(10px, 0);
+    }
+
+    37.5% {
+        transform: translate(7px, 7px);
+    }
+
+    50% {
+        transform: translate(0, 10px);
+    }
+
+    62.5% {
+        transform: translate(-7px, 7px);
+    }
+
+    75% {
+        transform: translate(-10px, 0);
+    }
+
+    87.5% {
+        transform: translate(-7px, -7px);
+    }
+
+    100% {
+        transform: translate(0, -10px);
+    }
+}
+
+@keyframes flicker-on-click {
+
+    0%,
+    7%,
+    27% {
+        opacity: 0;
+    }
+
+    3%,
+    24%,
+    33%,
+    100%{
+        opacity: 0.95;
     }
 }
 
