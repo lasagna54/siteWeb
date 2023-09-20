@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*Empeche la photo d'etre plus grande que son container*/
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+/* Ensure proper sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Column container */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    flex: 20%;
+    flex-grow: 1;
+    box-sizing: border-box;
+    /* Set the width of the sidebar */
+    background-color: #f1f1f1;
+    /* Grey background color */
+    padding: 5px;
+    /* Some padding */
+    min-width: 0px;
+    font-size: 12px;
+}
+
+.headerSide {
+    display: flex;
+    min-width: 0px;
+    font-size: 16px;
+}
+
+/* Main column */
+.main {
+    flex: 20%;
+    flex-grow: 1;
+    /* Set the width of the main content */
+    background-color: white;
+    /* White background color */
+    padding: 5px;
+}
+
+/*titre du CV*/
+.titreCv {
+    background-color: #507ec7;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+    /* Some padding */
+    margin-bottom: 5px;
+    border-radius: 25px;
+    ;
+}
+
+/* a propos de moi*/
+.summary {
+    background-color: #1E4D92;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    /* Some padding */
+    margin-bottom: 5px;
+    border-radius: 25px;
+    ;
+}
+
+/* experience */
+.experience {
+    /* Set the width of the main content */
+    background-color: #1A437C;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+    /* Some padding */
+    border-radius: 25px;
+    ;
+    margin-bottom: 5px;
+}
+
+.poste {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Parcorus universitaire */
+.parcoursUniv {
+    background-color: #162E5D;
+    color: white;
+    font-size: 12px;
+    /* White background color */
+    padding: 10px;
+    /* Some padding */
+    border-radius: 25px;
+    margin-bottom: 5px;
+}
+
+.diplome {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/*colonne de gauche*/
+.technos {
+    font-size: 12px;
+    background-color: blanchedalmond;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+/*Les lignes de */
+hr.parcUniv {
+    margin-inline-start: 0;
+    width: 500px;
+}
+
+hr.expProf {
+    margin-inline-start: 0;
+    width: 500px;
+}
+
+hr.skill {
+    margin-inline-start: 0;
+    width: 50px;
+}
+
+/* pour les etoiles et autre icones */
+
+.checked {
+    color: orange;
+}
